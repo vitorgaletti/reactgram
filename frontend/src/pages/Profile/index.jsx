@@ -7,7 +7,8 @@ import { getUserDetails } from '../../slices/userSlice';
 import {
   publishPhoto,
   resetMessage,
-  getUserPhotos
+  getUserPhotos,
+  deletePhoto
 } from '../../slices/photoSlice';
 
 import { uploads } from '../../utils/config';
@@ -50,6 +51,12 @@ export function Profile() {
     setImage(image);
   }
 
+  function resetComponentMessage() {
+    setTimeout(() => {
+      dispatch(resetMessage());
+    }, 2000);
+  }
+
   function submitHandle(e) {
     e.preventDefault();
 
@@ -72,9 +79,13 @@ export function Profile() {
 
     setTitle('');
 
-    setTimeout(() => {
-      dispatch(resetMessage());
-    }, 2000);
+    resetComponentMessage();
+  }
+
+  // Delete a photo
+  function handleDelete(id) {
+    dispatch(deletePhoto(id));
+    resetComponentMessage();
   }
 
   if (loading) {
@@ -138,7 +149,7 @@ export function Profile() {
                     <BsFillEyeFill />
                   </Link>
                   <BsPencilFill />
-                  <BsXLg />
+                  <BsXLg onClick={() => handleDelete(photo._id)} />
                 </div>
               ) : (
                 <Link className="btn" to={`/photos/${photo._id}`}>
@@ -147,7 +158,7 @@ export function Profile() {
               )}
             </div>
           ))}
-          {photos.length === 0 && <p>Ainda nã há fotos publicadas</p>}
+          {photos.length === 0 && <p>Ainda não há fotos publicadas</p>}
         </div>
       </div>
     </div>
