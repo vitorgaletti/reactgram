@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useResetComponentMessage } from '../../hooks/useResetComponentMessage';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { getPhoto, like } from '../../slices/photoSlice';
+import { getPhoto, like, comment } from '../../slices/photoSlice';
 
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
@@ -26,7 +26,7 @@ export function Photo() {
 
   const { photo, loading, error, message } = useSelector(state => state.photo);
 
-  // comments
+  const [commentText, setCommentText] = useState('');
 
   // Load photo data
   useEffect(() => {
@@ -35,6 +35,21 @@ export function Photo() {
 
   function handleLike() {
     dispatch(like(photo._id));
+
+    resetMessage();
+  }
+
+  function handleComment(e) {
+    e.preventDefault();
+
+    const commentData = {
+      id: photo._id,
+      comment: commentText
+    };
+
+    dispatch(comment(commentData));
+
+    setCommentText('');
 
     resetMessage();
   }
@@ -50,6 +65,35 @@ export function Photo() {
       <div className="message-container">
         {error && <Message msg={error} type="error" />}
         {message && <Message msg={message} type="success" />}
+      </div>
+      <div className="comments">
+        <h3>Comentários: ({photo.comments?.length})</h3>
+        <form onSubmit={handleComment}>
+          <input
+            type="text"
+            placeholder="Insira o seu comentário..."
+            onChange={e => setCommentText(e.target.value)}
+            value={commentText || ''}
+          />
+          <input type="submit" value="Enviar" />
+        </form>
+        {photo.comments?.length === 0 && <p>Não há comentários...</p>}
+        {photo.comments?.map(comment => (
+          <div className="comment" key={comment.comment}>
+            <div className="author">
+              {comment.userImage && (
+                <img
+                  src={`${uploads}/users/${comment.userImage}`}
+                  alt={comment.userName}
+                />
+              )}
+              <Link to={`/users/${comment.userId}`}>
+                <p>{comment.userName}</p>
+              </Link>
+            </div>
+            <p>{comment.comment}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
