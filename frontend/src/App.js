@@ -11,6 +11,7 @@ import { Register } from './pages/Auth/Register';
 import { EditProfile } from './pages/EditProfile';
 import { Profile } from './pages/Profile';
 import { Photo } from './pages/Photo';
+import { Search } from './pages/Search';
 
 import './App.css';
 
@@ -50,6 +51,10 @@ function App() {
             <Route
               path="/photos/:id"
               element={auth ? <Photo /> : <Navigate to="/login" />}
+            />
+            <Route
+              path="/search"
+              element={auth ? <Search /> : <Navigate to="/login" />}
             />
           </Routes>
         </div>
