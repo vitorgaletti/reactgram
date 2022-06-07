@@ -17,3 +17,15 @@
   border-radius: 50%;
   margin-bottom: 1rem;
 }
+
+@media (max-width: 480px) {
+  #edit-profile {
+    max-width: fit-content;
+    padding: 1.5rem 1rem;
+  }
+
+  .profile-image {
+    width: 125px;
+    height: 125px;
+  }
+}

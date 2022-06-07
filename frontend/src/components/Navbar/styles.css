@@ -4,7 +4,7 @@
   align-items: center;
   background-color: #000;
   border-bottom: 1px solid #363636;
-  padding: 0.1rem 0.1rem;
+  padding: 0.1rem 1rem;
 }
 
 #search-form {
@@ -41,4 +41,17 @@
 
 #nav-links svg {
   font-size: 1.5rem;
+}
+
+@media (max-width: 480px) {
+  #nav {
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 10px;
+  }
+
+  #search-form {
+    width: 50%;
+  }
 }

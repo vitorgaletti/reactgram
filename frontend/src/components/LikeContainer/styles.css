@@ -17,3 +17,9 @@
 .like p {
   margin-left: 1rem;
 }
+
+@media (max-width: 480px) {
+  .like svg {
+    font-size: 1rem;
+  }
+}

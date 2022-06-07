@@ -18,3 +18,11 @@
 .no-photos a {
   color: #0094f6;
 }
+
+@media (max-width: 480px) {
+  #home {
+    width: fit-content;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

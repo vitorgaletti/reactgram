@@ -14,3 +14,15 @@
   text-align: center;
   margin: 0.5rem 0 2rem 0;
 }
+
+@media (max-width: 480px) {
+  #search {
+    width: fit-content;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  #search h2 {
+    font-size: 1rem;
+  }
+}

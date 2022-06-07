@@ -42,14 +42,16 @@ export function Navbar() {
       <Link to="/">
         <h2>ReactGram</h2>
       </Link>
-      <form id="search-form" onSubmit={handleSearch}>
-        <BsSearch />
-        <input
-          type="text"
-          placeholder="Pesquisar"
-          onChange={e => setQuery(e.target.value)}
-        />
-      </form>
+      {auth && (
+        <form id="search-form" onSubmit={handleSearch}>
+          <BsSearch />
+          <input
+            type="text"
+            placeholder="Pesquisar"
+            onChange={e => setQuery(e.target.value)}
+          />
+        </form>
+      )}
       <ul id="nav-links">
         {auth ? (
           <>
