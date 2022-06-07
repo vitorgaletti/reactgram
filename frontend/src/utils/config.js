@@ -1,5 +1,5 @@
-export const api = 'http://localhost:5000/api';
-export const uploads = 'http://localhost:5000/uploads';
+export const api = process.env.API_URL;
+export const uploads = `${api}/uploads`;
 
 export function requestConfig(method, data, token = null, image = null) {
   let config;
