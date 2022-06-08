@@ -50,8 +50,8 @@ export function Home() {
         ))}
       {photos?.length === 0 && (
         <h2>
-          Ainda não há fotoso publicadas,
-          <Link to={`/users/${user._id}`}>clique aqui</Link>
+          Ainda não há fotos publicadas,
+          <Link to={`/users/${user._id}`}> clique aqui</Link>
         </h2>
       )}
     </div>
