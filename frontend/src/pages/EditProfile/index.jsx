@@ -87,7 +87,7 @@ export function EditProfile() {
     <div id="edit-profile">
       <h2>Edite seus dados</h2>
       <p className="subtitle">
-        Adicionae uma imagem de perfil e conte mais sobre você...
+        Adicione uma imagem de perfil e conte mais sobre você...
       </p>
       {(user.profileImage || previewImage) && (
         <img
