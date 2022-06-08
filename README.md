@@ -2,13 +2,13 @@
 
 ## :computer: Sobre o Projeto
 
-ReactGram é um aplicação web baseado em algumas funcionalidades do Instagram.
+ReactGram é uma aplicação web baseado em algumas funcionalidades do Instagram.
 
 O projeto possui um sistema de autenticação, onde os usuários podem se
 cadastrar ou realizar o login (caso já possuir um cadastrado autenticado).
 
 Feito a autenticação, os usuários podem visualizar as postagens mais recentes no feed, curtir e comentar cada post. Ou se o usuário
-preferir, pode fazer um busca do post por título.
+preferir, pode fazer uma busca do post por título.
 
 Para publicar um post, é necessário inserir um título e uma imagem jpg, png ou jpeg. Também é possível visualizar, editar e excluir cada post publicado.
 
