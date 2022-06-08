@@ -79,6 +79,13 @@ $ cd frontend/
 $ npm install
 ```
 
+```bash
+# Crie um arquivo .env e configure as váriaveis de ambiente
+# API
+REACT_APP_API_URL=http://localhost:5000/api
+REACT_APP_API_UPLOADS=http://localhost:5000/uploads
+```
+
 - Execute
 
 ```bash
@@ -103,6 +110,19 @@ $ cd backend/
 
 ```bash
 $ npm install
+```
+
+```bash
+# Crie um arquivo .env e configure as váriaveis de ambiente
+PORT=5000
+WEB_HOST=http://localhost:3000
+
+# MongoDB
+DB_USER=
+DB_PASS=
+
+# JWT
+JWT_SECRET=
 ```
 
 - Execute
