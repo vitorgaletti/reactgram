@@ -70,8 +70,6 @@ export function Profile() {
       image
     };
 
-    console.log(photos);
-
     // build form data
     const formData = new FormData();
     const photoFormData = Object.keys(photoData).forEach(key =>
