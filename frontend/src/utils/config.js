@@ -1,6 +1,6 @@
 export const api = process.env.REACT_APP_API_URL;
 
-export const uploads = `${api}/uploads`;
+export const uploads = process.env.REACT_APP_API_UPLOADS;
 
 export function requestConfig(method, data, token = null, image = null) {
   let config;
